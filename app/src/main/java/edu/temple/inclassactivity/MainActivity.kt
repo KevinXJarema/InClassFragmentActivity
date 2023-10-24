@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var  someVar: Array<Int>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -16,5 +18,6 @@ class MainActivity : AppCompatActivity() {
         // Attach an instance of ImageDisplayFragment using factory method
         val myfragment = ImageDisplayFragment.newInstance(imageArray)
         supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, myfragment).commit()
+
     }
 }
