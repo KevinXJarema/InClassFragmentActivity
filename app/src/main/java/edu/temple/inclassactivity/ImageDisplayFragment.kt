@@ -44,6 +44,13 @@ class ImageDisplayFragment : Fragment() {
             layoutManager = GridLayoutManager(requireContext(), 2)
         }
     }
+    fun setImage (temp : IntArray) {
+        images = temp
+
+        view?.run {
+            (view as RecyclerView).adapter = CustomRecyclerAdapter(images)
+        }
+    }
 
     companion object {
         fun newInstance(images: IntArray) =
